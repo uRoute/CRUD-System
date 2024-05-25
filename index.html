@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+
+    <section class="crud">
+        <div class="container crud-form bg-light p-3 my-4 rounded ">
+            <h1 class="text-center">CRUD SYSTEM 🪶</h1>    
+            <div class="form-floating my-1">
+                <input oninput="validateInputs(this)" type="text" class="form-control" id="productName" placeholder="">
+                <ul class="alert p-2 my-2 alert-danger list-group rounded d-none">
+                    <li class="list-group-item  bg-light-subtle  ">Product name must start with UPPER letter</li>
+                    <li class="list-group-item  bg-light-subtle  ">one space allowed between name and model name</li>
+                    <li class="list-group-item  bg-light-subtle  ">model name accept 1-6 letters and 1-4 numbers with no space</li>
+                </ul>
+                <label for="productName">Product Name </label>
+                
+            </div>
+    
+            <div class="form-floating my-1">
+                <input oninput="validateInputs(this)" type="number" class="form-control" id="productPrice" placeholder="">
+                <label for="productPrice">Product Price </label>
+                <ul class="alert p-2 my-2 alert-danger list-group rounded d-none">
+                    <li class="list-group-item  bg-light-subtle  ">Product name must start with UPPER letter</li>
+                    <li class="list-group-item  bg-light-subtle  ">one space allowed between name and model name</li>
+                    <li class="list-group-item  bg-light-subtle  ">model name accept 1-6 letters and 1-4 numbers with no space</li>
+                </ul>
+            </div>
+    
+            <div class="form-floating my-1">
+                <input oninput="validateInputs(this)" list="category" type="text" class="form-control" id="productCategory" placeholder="">
+                <label for="productCategory">Product Category </label>
+                <datalist id="category">
+                    <option value="TV" />
+                    <option value="Mobile" />
+                    <option value="Screens" />
+                    <option value="Electronic" />
+                </datalist>
+                <ul class="alert p-2 my-2 alert-danger list-group rounded d-none">
+                    <li class="list-group-item  bg-light-subtle  ">Product name must start with UPPER letter</li>
+                    <li class="list-group-item  bg-light-subtle  ">one space allowed between name and model name</li>
+                    <li class="list-group-item  bg-light-subtle  ">model name accept 1-6 letters and 1-4 numbers with no space</li>
+                </ul>
+            </div>
+    
+            <div class="form-floating my-1">
+                <textarea oninput="validateInputs(this)" style="height: 100px;" class="form-control" id="productDescription" placeholder=""></textarea>
+                <label for="productDescription">Product Description </label>
+                <ul class="alert p-2 my-2 alert-danger list-group rounded d-none">
+                    <li class="list-group-item  bg-light-subtle  ">Product name must start with UPPER letter</li>
+                    <li class="list-group-item  bg-light-subtle  ">one space allowed between name and model name</li>
+                    <li class="list-group-item  bg-light-subtle  ">model name accept 1-6 letters and 1-4 numbers with no space</li>
+                </ul>
+            </div>
+    
+            <div class=" my-1">
+                <input type="file" class="form-control p-3" id="productImage" placeholder="">
+            </div>
+    
+            <div class="mt-3">
+                <button onclick="addProduct()" id="btnAdd" class="btn btn-outline-dark w-100">+Add Product</button>
+    
+                <button onclick="updateProduct()" id="btnUpdate" class="btn btn-warning d-none">Update Product</button>
+            </div>
+    
+        </div>
+    </section>
+
+    <section class="crud-display">
+        <input oninput="searchForProduct(this.value)" type="text" class="form-control mx-auto w-50" id="searchInput" placeholder="Search by product name ...">
+        <div class="container">
+            <div class="row" id="rowData">
+                
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
